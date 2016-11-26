@@ -106,7 +106,7 @@
         for (BRASheet *sheet in sheets) {
             
             [headerArray addObject:sheet.name];
-            NSLog(@"name : %@",sheet.name);
+            //NSLog(@"name : %@",sheet.name);
         }
         [totalArray addObject:headerArray];
         
