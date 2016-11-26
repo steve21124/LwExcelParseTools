@@ -20,4 +20,5 @@
  *  @return 两层(sheetArr[rowArr[]]）
  */
 + (NSArray *)excelParseForResource:(NSString *)filePath;
++ (NSArray *)excelParseForResourceWithHeader:(NSString *)filePath;
 @end

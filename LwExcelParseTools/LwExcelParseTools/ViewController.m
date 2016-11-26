@@ -21,8 +21,8 @@
     NSString *xlsxPath = [[NSBundle mainBundle] pathForResource:@"datasets" ofType:@"xlsx"];
     NSString *xlsPath = [[NSBundle mainBundle] pathForResource:@"datasets" ofType:@"xls"];
 
-    NSArray *xlsxArr = [LwExcelParseTools excelParseForResource:xlsxPath];
-    NSArray *xlsArr = [LwExcelParseTools excelParseForResource:xlsPath];
+    NSArray *xlsxArr = [LwExcelParseTools excelParseForResourceWithHeader:xlsxPath];
+    NSArray *xlsArr = [LwExcelParseTools excelParseForResourceWithHeader:xlsPath];
     NSLog(@"%@\n**********************\n%@", xlsxArr, xlsArr);
 }
 
