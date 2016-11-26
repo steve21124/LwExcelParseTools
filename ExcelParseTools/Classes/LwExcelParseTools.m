@@ -77,7 +77,7 @@
         DHxlsReader *reader = [DHxlsReader xlsReaderWithPath:filePath];
         assert(reader);
         NSMutableArray *headerArray = [NSMutableArray array];
-        for (uint32_t i = 0; i <= [reader numberOfSheets]; i++)
+        for (uint32_t i = 0; i < [reader numberOfSheets]; i++)
         {
             [headerArray addObject:[reader sheetNameAtIndex:i]];
         }
