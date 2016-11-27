@@ -79,7 +79,9 @@
         NSMutableArray *headerArray = [NSMutableArray array];
         for (uint32_t i = 0; i < [reader numberOfSheets]; i++)
         {
-            [headerArray addObject:[reader sheetNameAtIndex:i]];
+            NSMutableDictionary *headerDict = [[NSMutableDictionary alloc] init];
+            [headerDict setObject:[reader sheetNameAtIndex:i] forKey:@"name"];
+            [headerArray addObject:headerDict];
         }
          [totalArray addObject:headerArray];
         //每个sheet
@@ -111,8 +113,9 @@
         NSMutableArray *headerArray = [NSMutableArray array];
         for (BRASheet *sheet in sheets) {
             
-            [headerArray addObject:sheet.name];
-            //NSLog(@"name : %@",sheet.name);
+            NSMutableDictionary *headerDict = [[NSMutableDictionary alloc] init];
+            [headerDict setObject:sheet.name forKey:@"name"];
+            [headerArray addObject:headerDict];;
         }
         [totalArray addObject:headerArray];
         
