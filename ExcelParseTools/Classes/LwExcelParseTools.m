@@ -10,7 +10,7 @@
 #import "BRASheet.h"
 @implementation LwExcelParseTools
 
-+ (NSArray *)excelParseForResource:(NSString *)filePath
++ (NSMutableArray *)excelParseForResource:(NSString *)filePath
 {
     NSMutableArray *totalArray = [NSMutableArray array];
     NSString *type = [[[filePath lastPathComponent] componentsSeparatedByString:@"."] lastObject];
@@ -68,7 +68,7 @@
     return totalArray;
 }
 
-+ (NSArray *)excelParseForResourceWithHeader:(NSString *)filePath
++ (NSMutableArray *)excelParseForResourceWithHeader:(NSString *)filePath
 {
     NSMutableArray *totalArray = [NSMutableArray array];
     NSString *type = [[[filePath lastPathComponent] componentsSeparatedByString:@"."] lastObject];
