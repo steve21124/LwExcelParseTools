@@ -71,6 +71,7 @@
 + (NSMutableArray *)excelParseForResourceWithHeader:(NSString *)filePath
 {
     NSMutableArray *totalArray = [NSMutableArray array];
+    NSString *filename = [filePath lastPathComponent];
     NSString *type = [[[filePath lastPathComponent] componentsSeparatedByString:@"."] lastObject];
     if ([[type lowercaseString] isEqualToString:@"xls"])
     {
@@ -81,11 +82,12 @@
         {
             NSMutableDictionary *headerDict = [[NSMutableDictionary alloc] init];
             [headerDict setObject:[reader sheetNameAtIndex:i] forKey:@"name"];
+            [headerDict setObject:filename forKey:@"excel_cache_filename"];
             [headerArray addObject:headerDict];
         }
          [totalArray addObject:headerArray];
         //每个sheet
-        for (uint32_t i = 0; i <= [reader numberOfSheets]; i++)
+        for (uint32_t i = 0; i < [reader numberOfSheets]; i++)
         {
             NSMutableArray *sheetArray = [NSMutableArray array];
             //行 row
